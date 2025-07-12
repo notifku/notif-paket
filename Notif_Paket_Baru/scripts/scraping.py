@@ -5,8 +5,12 @@ import pandas as pd
 import sys
 import os
 
+# Path base folder dinamis (root repo)
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DATA_DIR = os.path.join(BASE_DIR, "data")
+
 # Pastikan folder data/ ada
-os.makedirs("../data", exist_ok=True)
+os.makedirs(DATA_DIR, exist_ok=True)
 
 # URL API
 url = "https://sirup.lkpp.go.id/sirup/caripaketctr/search"
@@ -156,8 +160,9 @@ print("\n\nContoh data:")
 print(df.head())
 
 # Simpan CSV
-output_file = "/Users/rayyy/Documents/KERJA/Notif_Paket_Baru/data/hasil_scrap.csv"
+output_file = os.path.join(DATA_DIR, "hasil_scrap.csv")
 df.to_csv(output_file, index=False)
 
 print(f"\n✅ Scraping selesai. Total data: {len(df)} baris.")
 print(f"✅ Data disimpan di: {output_file}")
+

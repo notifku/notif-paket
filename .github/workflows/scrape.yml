@@ -2,9 +2,9 @@ name: Scrape LKPP Data
 
 on:
   schedule:
-    - cron: '0 2 * * *'     # 10:00 WITA
-    - cron: '30 8 * * *'    # 16:30 WITA
-  workflow_dispatch:        # Manual trigger
+    - cron: '0 2 * * *'
+    - cron: '30 8 * * *'
+  workflow_dispatch:
 
 jobs:
   scrape:

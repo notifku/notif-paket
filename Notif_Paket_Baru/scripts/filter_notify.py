@@ -6,7 +6,7 @@ import sys
 from utils import send_telegram
 
 # ========= PATH ===========
-BASE_DIR = "/Users/rayyy/Documents/KERJA/Notif_Paket_Baru"
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_DIR = os.path.join(BASE_DIR, "data")
 hasil_scrap_file = os.path.join(DATA_DIR, "hasil_scrap.csv")
 master_file = os.path.join(DATA_DIR, "data_master.csv")
